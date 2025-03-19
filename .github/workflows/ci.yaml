@@ -71,7 +71,7 @@ jobs:
           python -m pip install cibuildwheel==2.16.2
 
       - name: Build wheels
-        run: CIBW_SKIP="pp*,*-musllinux_*" python -m cibuildwheel --output-dir wheelhouse
+        run: CIBW_SKIP="pp* *-musllinux_*" python -m cibuildwheel --output-dir wheelhouse
 
       - name: Store the distribution packages
         uses: actions/upload-artifact@v4
