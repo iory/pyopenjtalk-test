@@ -96,9 +96,13 @@ jobs:
           fetch-depth: 0
           submodules: true
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
       - name: Install build tool
         run: python -m pip install sdist
       - name: Build source distribution
