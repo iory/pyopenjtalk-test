@@ -103,6 +103,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           verbose: true
+          password: ${{ secrets.PYPI_TOKEN }}
 
   # NOTE: for testing purposes only
   # publish-to-testpypi:
